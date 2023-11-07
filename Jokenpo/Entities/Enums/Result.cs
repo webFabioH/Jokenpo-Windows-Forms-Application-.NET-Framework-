@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Jokenpo.Entities.Enums
 {
-    internal class Result
+    public enum Result
     {
+        Win,
+        Lose,
+        Draw
     }
 }

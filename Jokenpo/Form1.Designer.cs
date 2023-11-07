@@ -34,7 +34,7 @@
             this.picResult = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelResult = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnRock = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
             // 
             // labelTitle
             // 
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(13, 9);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(786, 63);
@@ -56,6 +56,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(22, 107);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 200);
@@ -64,6 +65,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(306, 107);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 200);
@@ -72,6 +74,7 @@
             // 
             // picResult
             // 
+            this.picResult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picResult.Location = new System.Drawing.Point(588, 96);
             this.picResult.Name = "picResult";
             this.picResult.Size = new System.Drawing.Size(200, 200);
@@ -81,6 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(78, 190);
@@ -92,6 +96,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label2.Location = new System.Drawing.Point(380, 190);
@@ -100,16 +105,16 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "PC";
             // 
-            // label3
+            // labelResult
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(676, 190);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 32);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "?";
+            this.labelResult.AutoSize = true;
+            this.labelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResult.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelResult.Location = new System.Drawing.Point(676, 190);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(31, 32);
+            this.labelResult.TabIndex = 6;
+            this.labelResult.Text = "?";
             // 
             // label4
             // 
@@ -142,6 +147,7 @@
             this.btnRock.Size = new System.Drawing.Size(200, 200);
             this.btnRock.TabIndex = 9;
             this.btnRock.UseVisualStyleBackColor = true;
+            this.btnRock.Click += new System.EventHandler(this.btnRock_Click);
             // 
             // btnPaper
             // 
@@ -152,6 +158,7 @@
             this.btnPaper.Size = new System.Drawing.Size(200, 200);
             this.btnPaper.TabIndex = 10;
             this.btnPaper.UseVisualStyleBackColor = true;
+            this.btnPaper.Click += new System.EventHandler(this.btnPaper_Click);
             // 
             // btnScissors
             // 
@@ -162,6 +169,7 @@
             this.btnScissors.Size = new System.Drawing.Size(200, 200);
             this.btnScissors.TabIndex = 11;
             this.btnScissors.UseVisualStyleBackColor = true;
+            this.btnScissors.Click += new System.EventHandler(this.btnScissors_Click);
             // 
             // Form1
             // 
@@ -173,7 +181,7 @@
             this.Controls.Add(this.btnRock);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelResult);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picResult);
@@ -182,7 +190,7 @@
             this.Controls.Add(this.labelTitle);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Jokenpo";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).EndInit();
@@ -199,7 +207,7 @@
         private System.Windows.Forms.PictureBox picResult;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRock;
